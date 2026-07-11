@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Type of Electrical Works</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0b3c8f;
+            --dark-blue: #022055;
+            --orange: #f47b13;
+            --text-dark: #333;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Top Header Contact Info */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: #fff;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            border: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-circle i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+        }
+
+        .logo-circle .bolt {
+            position: absolute;
+            color: var(--orange);
+            font-size: 1.8rem;
+        }
+
+        .logo-text h1 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            color: var(--orange);
+            letter-spacing: 3px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .contact-info-block {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-item i {
+            font-size: 1.4rem;
+            color: #fff;
+            background: var(--primary-blue);
+            padding: 12px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-text span {
+            display: block;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .info-text strong {
+            font-size: 0.9rem;
+            color: var(--dark-blue);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--dark-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 18px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links li a.active, .nav-links li a:hover {
+            color: var(--orange);
+            border-bottom: 3px solid var(--orange);
+        }
+
+        .btn-quote {
+            background-color: var(--orange);
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn-quote:hover {
+            background-color: #d6660a;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            display: flex;
+            background-color: #e2e8f0;
+            min-height: 450px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-text-block {
+            width: 50%;
+            padding: 50px 5%;
+            z-index: 2;
+        }
+
+        .hero-img-block {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .hero-text-block tag {
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hero-text-block h2 {
+            font-size: 3.2rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero-text-block p {
+            font-size: 1.2rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-call, .btn-whatsapp {
+            padding: 12px 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .btn-call { background-color: var(--primary-blue); }
+        .btn-whatsapp { background-color: var(--orange); }
+
+        /* Services Section */
+        .services-section {
+            padding: 60px 5%;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .services-section h2 {
+            font-size: 2rem;
+            color: var(--dark-blue);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .services-section h2::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--orange);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 0.95rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+        }
+
+        .service-card .line {
+            width: 25px;
+            height: 3px;
+            background-color: var(--orange);
+            margin-top: 15px;
+        }
+
+        /* Trust Badges Footer Bar */
+        .trust-bar {
+            background-color: var(--dark-blue);
+            color: #fff;
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            border-top: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .trust-badge i {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .trust-badge-text h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .trust-badge-text p {
+            font-size: 0.75rem;
+            color: #ccc;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-banner { flex-direction: column; min-height: auto; }
+            .hero-text-block { width: 100%; text-align: center; padding: 40px 5%; }
+            .hero-btns { justify-content: center; }
+            .hero-img-block { display: none; }
+            .header-container { flex-direction: column; gap: 15px; text-align: center; }
+            .logo-area { flex-direction: column; }
+            .contact-info-block { justify-content: center; }
+            .navbar { flex-direction: column; padding: 15px; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links li a { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header Area -->
+    <header class="header-container">
+        <div class="logo-area">
+            <div class="logo-circle">
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-bolt bolt"></i>
+            </div>
+            <div class="logo-text">
+                <h1>GAURAV <span>ELECTRICAL</span> Works & Interior Works</h1>
+                <p>Powering Your World Safely</p>
+            </div>
+        </div>
+        
+        <div class="contact-info-block">
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div class="info-text">
+                    <span>Call Us</span>
+                    <strong>7738872512<br>8369886977</strong>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="info-text">
+                    <span>Email Us</span>
+                    <strong>prajapatigaurav531<br>@gmail.com</strong>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="info-text">
+                    <span>Our Location</span>
+                    <strong>G-1 Diwakar House, Yari Road,<br>Versova, Andheri West, Mumbai</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Why Choose Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <a href="#" class="btn-quote">Get A Quote</a>
+    </nav>
+
+    <!-- 3. Hero Banner Section -->
+    <section class="hero-banner">
+        <div class="hero-text-block">
+            <tag>SAFE. RELIABLE. PROFESSIONAL.</tag>
+            <h2>ALL TYPE OF<br>ELECTRICAL WORKS</h2>
+            <p>Residential | Commercial | Industrial</p>
+            <div class="hero-btns">
+                <a href="tel:7738872512" class="btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+                <a href="https://wa.me/917738872512" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp Us</a>
+            </div>
+        </div>
+        <div class="hero-img-block"></div>
+    </section>
+
+    <!-- 4. Services Section -->
+    <section class="services-section">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fa-solid fa-house-chimney-crack"></i>
+                <h3>House Wiring</h3>
+                <div class="line"></div>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-industry"></i>
+                <h3>Industrial Electrical Work</h3>
+                <div class="line"></div>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-building"></i>
+                <h3>Commercial Wiring</h3>
+                <div class="line"></div>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>LED Installation</h3>
+                <div class="line"></div>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+                <h3>MCB & DB Panel</h3>
+                <div class="line"></div>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h3>Electrical Maintenance</h3>
+                <div class="line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Trust Badge Footer Bar -->
+    <footer class="trust-bar">
+        <div class="trust-badge">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="trust-badge-text">
+                <h4>Safety First</h4>
+                <p>We follow all safety standards & protocols</p>
+            </div>
+        </div>
+        <div class="trust-badge">
+            <i class="fa-solid fa-users"></i>
+            <div class="trust-badge-text">
+                <h4>Expert Team</h4>
+                <p>Skilled & experienced professionals</p>
+            </div>
+        </div>
+        <div class="trust-badge">
+            <i class="fa-solid fa-award"></i>
+            <div class="trust-badge-text">
+                <h4>Quality Work</h4>
+                <p>We deliver 100% quality work on time</p>
+            </div>
+        </div>
+        <div class="trust-badge">
+            <i class="fa-solid fa-headset"></i>
+            <div class="trust-badge-text">
+                <h4>24/7 Support</h4>
+                <p>We are always here to help you</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917738872512" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
